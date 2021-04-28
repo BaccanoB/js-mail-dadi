@@ -11,22 +11,24 @@
 
 
 // Chiedere all'utente email
-var mail=prompt("Inserisci qui la tua email!");
+var mail = prompt("Inserisci qui la tua email!");
 console.log(mail);
 
 // Controllare che sia nella lista di chi può accedere
 
-var listaMail=["beatrice.baccano@yahoo.it","michela.franchini@hotmail.it","stafno.zina@gmail.it","gianluca.pesceo@yahoo.it","adriano.grimaldi@yahoo.it","andrea.castenetto@gamil.it"];
+var listaMail = ["beatrice.baccano@yahoo.it","michela.franchini@hotmail.it","stefano.zina@gmail.it","gianluca.pesce@yahoo.it","adriano.grimaldi@yahoo.it","andrea.castenetto@gamil.it"];
 console.log(listaMail);
 
+var controlloMail;
+
 for (var l = 0; l <= listaMail.length; l++ ) {
-    if (mail != listaMail[l]) {
-        mail = "non corretto"
-    } else {
-        mail = "corretto"
+    if (mail == listaMail[l]) {
+        controlloMail = "corretta";
     }
 }
 
-console.log(mail);
+controlloMail = "gentile utente la sua mail risulta " + controlloMail;
+console.log(controlloMail);
+document.getElementById("mail").innerHTML = controlloMail
 
 // Stampare un messaggio appropriato sull'esito del controllo
