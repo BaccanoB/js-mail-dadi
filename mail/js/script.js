@@ -19,7 +19,7 @@ console.log(mail);
 var listaMail = ["beatrice.baccano@yahoo.it","michela.franchini@hotmail.it","stefano.zina@gmail.it","gianluca.pesce@yahoo.it","adriano.grimaldi@yahoo.it","andrea.castenetto@gamil.it"];
 console.log(listaMail);
 
-var controlloMail;
+var controlloMail = true;
 
 for (var l = 0; l <= listaMail.length; l++ ) {
     if (mail == listaMail[l]) {
@@ -27,8 +27,11 @@ for (var l = 0; l <= listaMail.length; l++ ) {
     }
 }
 
-controlloMail = "gentile utente la sua mail risulta " + controlloMail;
+if (controlloMail == true) {
+    document.getElementById("mail").innerHTML = "Gentile utente la sua mail " + mail + " risulta errata";
+}else {
+    document.getElementById("mail").innerHTML = "Gentile utente la sua mail " + mail + " risulta " + controlloMail;}
+
 console.log(controlloMail);
-document.getElementById("mail").innerHTML = controlloMail
 
 // Stampare un messaggio appropriato sull'esito del controllo
