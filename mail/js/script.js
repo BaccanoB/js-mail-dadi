@@ -11,27 +11,29 @@
 
 
 // Chiedere all'utente email
-var mail = prompt("Inserisci qui la tua email!");
-console.log(mail);
+var user_mail = prompt("Inserisci qui la tua email!");
+console.log(user_mail);
 
 // Controllare che sia nella lista di chi può accedere
 
-var listaMail = ["beatrice.baccano@yahoo.it","michela.franchini@hotmail.it","stefano.zina@gmail.it","gianluca.pesce@yahoo.it","adriano.grimaldi@yahoo.it","andrea.castenetto@gamil.it"];
+var listaMail = ["beatrice.baccano@yahoo.it","michela.franchini@hotmail.it","stefano.zina@gmail.it","gianluca.pesce@yahoo.it","adriano.grimaldi@yahoo.it","andrea.castenetto@gmail.it"];
 console.log(listaMail);
 
-var controlloMail = true;
+var mailIsValid = false;  
 
 for (var l = 0; l <= listaMail.length; l++ ) {
-    if (mail == listaMail[l]) {
-        controlloMail = "corretta";
+    if (user_mail == listaMail[l]) {
+        mailIsValid = true;
     }
 }
 
-if (controlloMail == true) {
-    document.getElementById("mail").innerHTML = "Gentile utente la sua mail " + mail + " risulta errata";
-}else {
-    document.getElementById("mail").innerHTML = "Gentile utente la sua mail " + mail + " risulta " + controlloMail;}
-
-console.log(controlloMail);
-
 // Stampare un messaggio appropriato sull'esito del controllo
+
+if (mailIsValid == false) {
+    document.getElementById("mail").innerHTML = "Gentile utente la sua mail <i>" + user_mail + "</i>  risulta errata";
+} else {
+    document.getElementById("mail").innerHTML = "Gentile utente la sua mail " + user_mail + " risulta corretta" ;
+}
+
+console.log(mailIsValid);
+
